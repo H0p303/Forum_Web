@@ -36,7 +36,7 @@
         <input type="password" placeholder="Enter Password" name="pwd" required/>
         <button type="submit" class="btn" name="Login-Submit">Login</button>
         <button type="button" class="btn"><a href="#">Sign Up</a></button>
-        <button type="button" class="btn cancel" onclick="OpenCloseForm()">Close</button>
+        <!-- <button type="button" class="btn cancel" onclick="OpenCloseForm()">Close</button> -->
       </form>
     </div>
 
@@ -48,13 +48,13 @@
 
     function OpenCloseForm() {
 
-    if (active==1){
-        document.getElementById("NAME HERE").style.display = "block";
-        active=0;
+    if (active==0){
+        document.getElementById("myForm").style.display = "block";
+        active=1;
     }
     else{
-        document.getElementById("NAME HERE").style.display = "none";
-        active=1;
+        document.getElementById("myForm").style.display = "none";
+        active=0;
     }
 
     }
