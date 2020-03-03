@@ -15,7 +15,11 @@
             <a href="#"><img src="../Resources/Images/User_64x64.png" alt=""></a>
         </nav>
     </aside>
-    <header></header>
+    <header>
+
+    <a href="#"></a>
+
+    </header>
     <section></section>
     <section></section>
     <section></section>
