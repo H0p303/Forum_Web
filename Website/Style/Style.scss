@@ -1,73 +1,150 @@
-body, html{
+body,
+html {
     height: 100vh;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     display: grid;
     grid-template-columns: 10% 30% auto;
     grid-template-rows: auto 30% 30% 30%;
     grid-gap: 0.2em;
-    grid-template-areas: 
+    grid-template-areas:
         "Sidebar header header header"
         "Sidebar Sect1 main main"
         "Sidebar Sect2 main main"
         "Sidebar Sect3 main main"
 }
 
-aside{
+aside {
     grid-area: Sidebar;
-    background: #071e3d;
-    nav{
+    background: #1f4287;
+
+    nav {
         height: 100vh;
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: repeat(auto, 3);
-        grid-template-areas: 
+        grid-template-areas:
             "Home"
             "Bell"
             "User";
-        a{
+
+        a {
             display: block;
             text-align: center;
             margin: auto 0 auto 0;
-            img{
+
+            img {
                 width: 48px;
             }
         }
-        a:nth-of-type(1){
+
+        a:nth-of-type(1) {
             grid-area: Home;
         }
-        a:nth-of-type(2){
+
+        a:nth-of-type(2) {
             grid-area: Bell;
         }
-        a:nth-of-type(3){
+
+        a:nth-of-type(3) {
             grid-area: User;
         }
     }
 }
 
-header{
+header {
     grid-area: header;
-    background: #1f4287;
+    background: #871f5c;
 }
 
-section:nth-of-type(1){
+section:nth-of-type(1) {
     grid-area: Sect1;
-    background: #278ea5;
+    background: #afac0a;
 }
 
-section:nth-of-type(2){
+section:nth-of-type(2) {
     grid-area: Sect2;
-    background: #8fd4e4;
+    background: #6d2460;
 }
 
-section:nth-of-type(3){
+section:nth-of-type(3) {
     grid-area: Sect3;
-    background: #104f5e;
+    background: #47595d;
 }
 
-main{
+main {
     grid-area: main;
     background: #3f4f64;
+
+    .open-button {
+        background-color: #555;
+        color: white;
+        // border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        top: 32px;
+        right: 28px;
+        width: 100px;
+        // height: 60px;
+    }
+
+    .form-popup {
+        display: none;
+        position: fixed;
+        top: 200;
+        right: 0;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+
+    .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    .form-container input {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    .form-container input:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+    .form-container .btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .form-container .cancel {
+        background-color: red;
+    }
+
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
 }
