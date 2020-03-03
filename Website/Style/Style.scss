@@ -1,0 +1,76 @@
+body, html{
+    height: 100vh;
+}
+
+body{
+    margin: 0;
+    display: grid;
+    // grid-template-columns: auto 30% 30% 30%;
+    grid-template-columns: 10% 30% auto;
+    // grid-template-rows: 10% 30% auto;
+    grid-template-rows: auto 30% 30% 30%;
+    grid-gap: 0.2em;
+    grid-template-areas: 
+        "Sidebar header header header"
+        "Sidebar Sect1 main main"
+        "Sidebar Sect2 main main"
+        "Sidebar Sect3 main main"
+}
+
+aside{
+    grid-area: Sidebar;
+    background: #071e3d;
+    nav{
+        height: 100vh;
+        // width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto, 3);
+        grid-template-areas: 
+            "Home"
+            "Bell"
+            "User";
+        a{
+            display: block;
+            text-align: center;
+            margin: auto 0 auto 0;
+            img{
+                width: 48px;
+            }
+        }
+        a:nth-of-type(1){
+            grid-area: Home;
+        }
+        a:nth-of-type(2){
+            grid-area: Bell;
+        }
+        a:nth-of-type(3){
+            grid-area: User;
+        }
+    }
+}
+
+header{
+    grid-area: header;
+    background: #1f4287;
+}
+
+section:nth-of-type(1){
+    grid-area: Sect1;
+    background: #278ea5;
+}
+
+section:nth-of-type(2){
+    grid-area: Sect2;
+    background: #8fd4e4;
+}
+
+section:nth-of-type(3){
+    grid-area: Sect3;
+    background: #104f5e;
+}
+
+main{
+    grid-area: main;
+    background: #3f4f64;
+}

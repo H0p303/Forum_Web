@@ -1,0 +1,101 @@
+body, html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 30% auto;
+      grid-template-columns: 10% 30% auto;
+  -ms-grid-rows: auto 30% 30% 30%;
+      grid-template-rows: auto 30% 30% 30%;
+  grid-gap: 0.2em;
+      grid-template-areas: "Sidebar header header header" "Sidebar Sect1 main main" "Sidebar Sect2 main main" "Sidebar Sect3 main main";
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: Sidebar;
+  background: #071e3d;
+}
+
+aside nav {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: (3)[auto];
+      grid-template-rows: repeat(auto, 3);
+      grid-template-areas: "Home" "Bell" "User";
+}
+
+aside nav a {
+  display: block;
+  text-align: center;
+  margin: auto 0 auto 0;
+}
+
+aside nav a img {
+  width: 48px;
+}
+
+aside nav a:nth-of-type(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: Home;
+}
+
+aside nav a:nth-of-type(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: Bell;
+}
+
+aside nav a:nth-of-type(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: User;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  background: #1f4287;
+}
+
+section:nth-of-type(1) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: Sect1;
+  background: #278ea5;
+}
+
+section:nth-of-type(2) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: Sect2;
+  background: #8fd4e4;
+}
+
+section:nth-of-type(3) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: Sect3;
+  background: #104f5e;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+  background: #3f4f64;
+}
+/*# sourceMappingURL=Style.css.map */
