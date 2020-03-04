@@ -27,7 +27,7 @@ body {
 
 aside {
     grid-area: Sidebar;
-    background: #1f4287;
+    background: #0e153a;
 
     nav {
         height: 100vh;
@@ -70,17 +70,17 @@ header {
 
 section:nth-of-type(1) {
     grid-area: Sect1;
-    background: #afac0a;
+    background: #b8c8ca;
 }
 
 section:nth-of-type(2) {
     grid-area: Sect2;
-    background: #6d2460;
+    background: #849091;
 }
 
 section:nth-of-type(3) {
     grid-area: Sect3;
-    background: #47595d;
+    background: #4a4f50;
 }
 
 main {

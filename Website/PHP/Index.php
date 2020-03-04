@@ -36,7 +36,6 @@
         <input type="password" placeholder="Enter Password" name="pwd" required/>
         <button type="submit" class="btn" name="Login-Submit">Login</button>
         <button type="button" class="btn"><a href="#">Sign Up</a></button>
-        <!-- <button type="button" class="btn cancel" onclick="OpenCloseForm()">Close</button> -->
       </form>
     </div>
 
