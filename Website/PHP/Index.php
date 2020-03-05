@@ -47,7 +47,7 @@
             <input type="password" placeholder="Password" name="pwd">
             <input type="password" placeholder="Re-type Password" name="pwd-verify">
             <button type="submit" name="singup-submit" class="btn">Sign Up</button>
-            <button typ="button" class="btn" onclick="OpenFormType()">Login</button>
+            <button type="button" class="btn" onclick="OpenFormType()">Login</button>
         </form>
     </div>
 
@@ -60,15 +60,16 @@
 
     function OpenCloseForm() {
 
-    if (activeForm == 0){
-        document.getElementById("myLoginForm").style.display = "block";
-        activeForm = 1;
-    }
-    else{
-        document.getElementById("myLoginForm").style.display = "none";
-        activeForm = 0;
-    }
-
+        if (activeForm == 0){
+            document.getElementById("myLoginForm").style.display = "block";
+            activeForm = 1;
+        }
+        else{
+            document.getElementById("myLoginForm").style.display = "none";
+            document.getElementById("mySignupForm").style.display = "none";
+            activeFormType = 0;
+            activeForm = 0;
+        }
     }
 
     function OpenFormType(){
