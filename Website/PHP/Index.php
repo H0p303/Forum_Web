@@ -27,7 +27,7 @@
 
     <button class="open-button" onclick="OpenCloseForm()">Login</button>
 
-    <div class="form-popup" id="myForm">
+    <div class="form-popup" id="myLoginForm">
       <form action="../Includes/Login.inc.php" class="form-container" method="post">
         <h1>Login</h1>
         <label for="email"><b>Email</b></label>
@@ -35,27 +35,53 @@
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pwd" required/>
         <button type="submit" class="btn" name="Login-Submit">Login</button>
-        <button type="button" class="btn"><a href="#">Sign Up</a></button>
+        <button type="button" class="btn" onclick="OpenFormType()">Sign Up</button>
       </form>
+    </div>
+
+    <div class="form-popup" id="mySignupForm">
+        <form method="post" class="form-container" action="../Includes/Signup.inc.php">
+            <h1>Sign Up</h1>
+            <input type="text" placeholder="Username" name="uid">
+            <input type="text" placeholder="Email" name="mail">
+            <input type="password" placeholder="Password" name="pwd">
+            <input type="password" placeholder="Re-type Password" name="pwd-verify">
+            <button type="submit" name="singup-submit" class="btn">Sign Up</button>
+            <button typ="button" class="btn" onclick="OpenFormType()">Login</button>
+        </form>
     </div>
 
     </main>
 
     <script>
 
-    var active = 0;
+    var activeForm = 0;
+    var activeFormType = 0;
 
     function OpenCloseForm() {
 
-    if (active==0){
-        document.getElementById("myForm").style.display = "block";
-        active=1;
+    if (activeForm == 0){
+        document.getElementById("myLoginForm").style.display = "block";
+        activeForm = 1;
     }
     else{
-        document.getElementById("myForm").style.display = "none";
-        active=0;
+        document.getElementById("myLoginForm").style.display = "none";
+        activeForm = 0;
     }
 
+    }
+
+    function OpenFormType(){
+        if(activeFormType == 0){
+            document.getElementById("mySignupForm").style.display = "block";
+            document.getElementById("myLoginForm").style.display = "none";
+            activeFormType = 1;
+        }
+        else{
+            document.getElementById("mySignupForm").style.display = "none";
+            document.getElementById("myLoginForm").style.display = "block";
+            activeFormType = 0;
+        }
     }
 
     //   function openForm() {

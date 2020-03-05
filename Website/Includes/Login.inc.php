@@ -44,7 +44,7 @@ if(isset($_POST['Login-Submit'])){
                     $_SESSION['userID'] = $row['idUsers'];
                     $_SESSION['userUID'] = $row['uidUsers'];
 
-                    header("Location: ../PHP/Index.php");
+                    header("Location: ../PHP/Index.php?Success");
                     exit();
                 }
                 else{

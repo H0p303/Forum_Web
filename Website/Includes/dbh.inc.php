@@ -3,7 +3,7 @@
 $serversame = "localhost";
 $dbUsername = "root";
 $dbPwd = "";
-$dbName = "Forum_db";
+$dbName = "login-system";
 
 $conn = mysqli_connect($serversame, $dbUsername, $dbPwd, $dbName);
 

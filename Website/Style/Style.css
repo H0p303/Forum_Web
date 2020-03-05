@@ -31,7 +31,8 @@ aside {
   -ms-grid-row-span: 4;
   -ms-grid-column: 1;
   grid-area: Sidebar;
-  background: #0e153a;
+  background: -webkit-gradient(linear, left top, right bottom, from(#fc466b), to(#3f5efb));
+  background: linear-gradient(to bottom right, #fc466b, #3f5efb);
 }
 
 aside nav {
@@ -85,21 +86,24 @@ section:nth-of-type(1) {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: Sect1;
-  background: #b8c8ca;
+  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
+  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
 }
 
 section:nth-of-type(2) {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: Sect2;
-  background: #849091;
+  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
+  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
 }
 
 section:nth-of-type(3) {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: Sect3;
-  background: #4a4f50;
+  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
+  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
 }
 
 main {
@@ -108,7 +112,8 @@ main {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: main;
-  background: #3f4f64;
+  background: -webkit-gradient(linear, left top, right bottom, from(#11998e), to(#38ef7d));
+  background: linear-gradient(to bottom right, #11998e, #38ef7d);
 }
 
 main .open-button {

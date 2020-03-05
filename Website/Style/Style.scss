@@ -27,7 +27,7 @@ body {
 
 aside {
     grid-area: Sidebar;
-    background: #0e153a;
+    background: linear-gradient(to bottom right, rgb(252, 70, 107), rgb(63, 94, 251));
 
     nav {
         height: 100vh;
@@ -70,22 +70,22 @@ header {
 
 section:nth-of-type(1) {
     grid-area: Sect1;
-    background: #b8c8ca;
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
 }
 
 section:nth-of-type(2) {
     grid-area: Sect2;
-    background: #849091;
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));;
 }
 
 section:nth-of-type(3) {
     grid-area: Sect3;
-    background: #4a4f50;
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));;
 }
 
 main {
     grid-area: main;
-    background: #3f4f64;
+    background: linear-gradient(to bottom right, rgb(17, 153, 142), rgb(56, 239, 125));
 
     .open-button {
         background-color: #555;
