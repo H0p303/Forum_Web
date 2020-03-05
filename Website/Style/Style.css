@@ -79,7 +79,8 @@ header {
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: header;
-  background: #871f5c;
+  background: -webkit-gradient(linear, left top, right bottom, from(#eb5757), to(black));
+  background: linear-gradient(to bottom right, #eb5757, black);
 }
 
 section:nth-of-type(1) {
