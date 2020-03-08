@@ -20,8 +20,8 @@ body {
   display: grid;
   -ms-grid-columns: 10% 30% auto;
       grid-template-columns: 10% 30% auto;
-  -ms-grid-rows: auto 30% 30% 30%;
-      grid-template-rows: auto 30% 30% 30%;
+  -ms-grid-rows: auto 31% 31% 31%;
+      grid-template-rows: auto 31% 31% 31%;
   grid-gap: 0.2em;
       grid-template-areas: "Sidebar header header header" "Sidebar Sect1 main main" "Sidebar Sect2 main main" "Sidebar Sect3 main main";
 }
@@ -83,6 +83,18 @@ header {
   background: linear-gradient(to bottom right, #eb5757, black);
 }
 
+header .open-button {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 1em;
+  border-radius: 34%;
+  position: fixed;
+  right: 2%;
+  height: auto;
+}
+
 section:nth-of-type(1) {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -115,17 +127,6 @@ main {
   grid-area: main;
   background: -webkit-gradient(linear, left top, right bottom, from(#11998e), to(#38ef7d));
   background: linear-gradient(to bottom right, #11998e, #38ef7d);
-}
-
-main .open-button {
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  top: 32px;
-  right: 28px;
-  width: 100px;
 }
 
 main .form-popup {

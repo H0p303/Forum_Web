@@ -17,7 +17,7 @@
     </aside>
     <header>
 
-    
+        <button class="open-button" onclick="OpenCloseForm()">Login</button>
 
     </header>
     <section></section>
@@ -25,7 +25,7 @@
     <section></section>
     <main>
 
-    <button class="open-button" onclick="OpenCloseForm()">Login</button>
+    
 
     <div class="form-popup" id="myLoginForm">
       <form action="../Includes/Login.inc.php" class="form-container" method="post">
@@ -42,10 +42,10 @@
     <div class="form-popup" id="mySignupForm">
         <form method="post" class="form-container" action="../Includes/Signup.inc.php">
             <h1>Sign Up</h1>
-            <input type="text" placeholder="Username" name="uid">
-            <input type="text" placeholder="Email" name="mail">
-            <input type="password" placeholder="Password" name="pwd">
-            <input type="password" placeholder="Re-type Password" name="pwd-verify">
+            <input type="text" placeholder="Username" name="uid" required>
+            <input type="text" placeholder="Email" name="mail" required>
+            <input type="password" placeholder="Password" name="pwd" required>
+            <input type="password" placeholder="Re-type Password" name="pwd-verify" required>
             <button type="submit" name="singup-submit" class="btn">Sign Up</button>
             <button type="button" class="btn" onclick="OpenFormType()">Login</button>
         </form>
