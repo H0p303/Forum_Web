@@ -8,6 +8,7 @@
 </head>
 <body>
     
+<div class="Main-Container">
     <aside>
         <nav>
             <a href="#"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
@@ -52,6 +53,8 @@
     </div>
 
     </main>
+</div>
+    
 
     <script>
 

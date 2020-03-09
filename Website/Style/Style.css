@@ -1,6 +1,7 @@
 body,
 html {
   height: 100vh;
+  margin: 0;
 }
 
 body a,
@@ -14,12 +15,12 @@ html a {
           box-sizing: border-box;
 }
 
-body {
+.Main-Container {
   margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10% 30% auto;
-      grid-template-columns: 10% 30% auto;
+  -ms-grid-columns: 5% 30% auto;
+      grid-template-columns: 5% 30% auto;
   -ms-grid-rows: auto 31% 31% 31%;
       grid-template-rows: auto 31% 31% 31%;
   grid-gap: 0.2em;
@@ -72,6 +73,14 @@ aside nav a:nth-of-type(3) {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: User;
+}
+
+aside:hover {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: Sidebar;
+  background: #40514e;
 }
 
 header {
