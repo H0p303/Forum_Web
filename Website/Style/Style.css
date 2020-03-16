@@ -19,22 +19,11 @@ html a {
   margin: 0;
   display: -ms-grid;
   display: grid;
-<<<<<<< HEAD
-<<<<<<< HEAD
   -ms-grid-columns: 10% 30% auto;
       grid-template-columns: 10% 30% auto;
   -ms-grid-rows: auto 30% 30% 30%;
       grid-template-rows: auto 30% 30% 30%;
   grid-gap: 0.3em;
-=======
-=======
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
-  -ms-grid-columns: 5% 30% auto;
-      grid-template-columns: 5% 30% auto;
-  -ms-grid-rows: auto 31% 31% 31%;
-      grid-template-rows: auto 31% 31% 31%;
-  grid-gap: 0.2em;
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
       grid-template-areas: "Sidebar header header header" "Sidebar Sect1 main main" "Sidebar Sect2 main main" "Sidebar Sect3 main main";
 }
 
@@ -114,18 +103,6 @@ header .open-button {
   height: auto;
 }
 
-header .open-button {
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-  opacity: 0.8;
-  padding: 1em;
-  border-radius: 34%;
-  position: fixed;
-  right: 2%;
-  height: auto;
-}
-
 section:nth-of-type(1) {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -187,8 +164,6 @@ main {
   border-radius: 34px 0 0 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 main .open-button {
   background-color: #555;
   color: white;
@@ -202,10 +177,6 @@ main .open-button {
   height: 32px;
 }
 
-=======
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
-=======
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
 main .form-popup {
   display: none;
   position: fixed;

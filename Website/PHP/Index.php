@@ -17,19 +17,7 @@
         </nav>
     </aside>
     <header>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-
         <button class="open-button" onclick="OpenCloseForm()">Login</button>
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
-
-=======
-
-        <button class="open-button" onclick="OpenCloseForm()">Login</button>
->>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
-
     </header>
     <section onclick="FirstSection()" id="Card1">
         <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
