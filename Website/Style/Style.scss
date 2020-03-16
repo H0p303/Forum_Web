@@ -1,6 +1,7 @@
 body,
 html {
     height: 100vh;
+    margin: 0;
 
     a {
         text-decoration: none;
@@ -12,12 +13,21 @@ html {
     box-sizing: border-box;
 }
 
-body {
+.Main-Container {
     margin: 0;
     display: grid;
+<<<<<<< HEAD
+<<<<<<< HEAD
     grid-template-columns: 10% 30% auto;
     grid-template-rows: auto 30% 30% 30%;
+    grid-gap: 0.3em;
+=======
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+    grid-template-columns: 5% 30% auto;
+    grid-template-rows: auto 31% 31% 31%;
     grid-gap: 0.2em;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
     grid-template-areas:
         "Sidebar header header header"
         "Sidebar Sect1 main main"
@@ -27,7 +37,7 @@ body {
 
 aside {
     grid-area: Sidebar;
-    background: linear-gradient(to bottom right, rgb(252, 70, 107), rgb(63, 94, 251));
+    background: rgba(0, 0, 0, 0.61);
 
     nav {
         height: 100vh;
@@ -63,43 +73,122 @@ aside {
     }
 }
 
+aside:hover {
+    grid-area: Sidebar;
+    background: #40514e;
+}
+
 header {
     grid-area: header;
+<<<<<<< HEAD
+    background: rgba(0, 0, 0, 0.18);
+    border-bottom-left-radius: 34px 34px;
+=======
     background: linear-gradient(to bottom right, rgb(235, 87, 87), rgb(0, 0, 0));
-}
-
-section:nth-of-type(1) {
-    grid-area: Sect1;
-    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
-}
-
-section:nth-of-type(2) {
-    grid-area: Sect2;
-    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));;
-}
-
-section:nth-of-type(3) {
-    grid-area: Sect3;
-    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));;
-}
-
-main {
-    grid-area: main;
-    background: linear-gradient(to bottom right, rgb(17, 153, 142), rgb(56, 239, 125));
 
     .open-button {
         background-color: #555;
         color: white;
-        // border-radius: 50%;
         cursor: pointer;
         opacity: 0.8;
+        padding: 1em;
+        border-radius: 34%;
         position: fixed;
-        top: 32px;
+        right: 2%;
+        height: auto;
+    }
+<<<<<<< HEAD
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+}
+
+section:nth-of-type(1) {
+    grid-area: Sect1;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 34px 34px 34px 34px;
+    
+    .TitleCard{
+        text-align: center;
+    }
+    .PCard{
+        text-align: center;
+        padding: 1em 2em 0 2em;
+    }
+}
+
+section:nth-of-type(2) {
+    grid-area: Sect2;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 34px 34px 34px 34px;
+
+    .TitleCard{
+        text-align: center;
+    }
+    .PCard{
+        text-align: center;
+        padding: 1em 2em 0 2em;
+    }
+=======
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
+    ;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+=======
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
+    ;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+}
+
+section:nth-of-type(3) {
+    grid-area: Sect3;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 34px 34px 0 0;
+
+    .TitleCard{
+        text-align: center;
+    }
+    .PCard{
+        text-align: center;
+        padding: 1em 2em 0 2em;
+    }
+=======
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
+    ;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+=======
+    background: linear-gradient(to bottom right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
+    ;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+}
+
+main {
+    grid-area: main;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 34px 0 0 0;
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+    .open-button {
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+        border-radius: 34px 34px 34px 34px;
+        border: none;
+        position: fixed;
+        top: 14px;
         right: 28px;
         width: 100px;
-        // height: 60px;
+        height: 32px;
     }
 
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
     .form-popup {
         display: none;
         position: fixed;

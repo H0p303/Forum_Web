@@ -1,6 +1,7 @@
 body,
 html {
   height: 100vh;
+  margin: 0;
 }
 
 body a,
@@ -14,15 +15,26 @@ html a {
           box-sizing: border-box;
 }
 
-body {
+.Main-Container {
   margin: 0;
   display: -ms-grid;
   display: grid;
+<<<<<<< HEAD
+<<<<<<< HEAD
   -ms-grid-columns: 10% 30% auto;
       grid-template-columns: 10% 30% auto;
   -ms-grid-rows: auto 30% 30% 30%;
       grid-template-rows: auto 30% 30% 30%;
+  grid-gap: 0.3em;
+=======
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+  -ms-grid-columns: 5% 30% auto;
+      grid-template-columns: 5% 30% auto;
+  -ms-grid-rows: auto 31% 31% 31%;
+      grid-template-rows: auto 31% 31% 31%;
   grid-gap: 0.2em;
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
       grid-template-areas: "Sidebar header header header" "Sidebar Sect1 main main" "Sidebar Sect2 main main" "Sidebar Sect3 main main";
 }
 
@@ -31,8 +43,7 @@ aside {
   -ms-grid-row-span: 4;
   -ms-grid-column: 1;
   grid-area: Sidebar;
-  background: -webkit-gradient(linear, left top, right bottom, from(#fc466b), to(#3f5efb));
-  background: linear-gradient(to bottom right, #fc466b, #3f5efb);
+  background: rgba(0, 0, 0, 0.61);
 }
 
 aside nav {
@@ -74,37 +85,96 @@ aside nav a:nth-of-type(3) {
   grid-area: User;
 }
 
+aside:hover {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: Sidebar;
+  background: #40514e;
+}
+
 header {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 3;
   grid-area: header;
-  background: -webkit-gradient(linear, left top, right bottom, from(#eb5757), to(black));
-  background: linear-gradient(to bottom right, #eb5757, black);
+  background: rgba(0, 0, 0, 0.18);
+  border-bottom-left-radius: 34px 34px;
+}
+
+header .open-button {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 1em;
+  border-radius: 34%;
+  position: fixed;
+  right: 2%;
+  height: auto;
+}
+
+header .open-button {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 1em;
+  border-radius: 34%;
+  position: fixed;
+  right: 2%;
+  height: auto;
 }
 
 section:nth-of-type(1) {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: Sect1;
-  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
-  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 34px 34px 34px 34px;
+}
+
+section:nth-of-type(1) .TitleCard {
+  text-align: center;
+}
+
+section:nth-of-type(1) .PCard {
+  text-align: center;
+  padding: 1em 2em 0 2em;
 }
 
 section:nth-of-type(2) {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: Sect2;
-  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
-  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 34px 34px 34px 34px;
+}
+
+section:nth-of-type(2) .TitleCard {
+  text-align: center;
+}
+
+section:nth-of-type(2) .PCard {
+  text-align: center;
+  padding: 1em 2em 0 2em;
 }
 
 section:nth-of-type(3) {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: Sect3;
-  background: -webkit-gradient(linear, left top, right bottom, from(#7f7fd5), color-stop(#86a8e7), to(#91eae4));
-  background: linear-gradient(to bottom right, #7f7fd5, #86a8e7, #91eae4);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 34px 34px 0 0;
+}
+
+section:nth-of-type(3) .TitleCard {
+  text-align: center;
+}
+
+section:nth-of-type(3) .PCard {
+  text-align: center;
+  padding: 1em 2em 0 2em;
 }
 
 main {
@@ -113,21 +183,29 @@ main {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: main;
-  background: -webkit-gradient(linear, left top, right bottom, from(#11998e), to(#38ef7d));
-  background: linear-gradient(to bottom right, #11998e, #38ef7d);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 34px 0 0 0;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 main .open-button {
   background-color: #555;
   color: white;
   cursor: pointer;
-  opacity: 0.8;
+  border-radius: 34px 34px 34px 34px;
+  border: none;
   position: fixed;
-  top: 32px;
+  top: 14px;
   right: 28px;
   width: 100px;
+  height: 32px;
 }
 
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+=======
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
 main .form-popup {
   display: none;
   position: fixed;

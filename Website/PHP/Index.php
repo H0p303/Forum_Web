@@ -8,6 +8,7 @@
 </head>
 <body>
     
+<div class="Main-Container">
     <aside>
         <nav>
             <a href="#"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
@@ -16,16 +17,47 @@
         </nav>
     </aside>
     <header>
-
+<<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+
+        <button class="open-button" onclick="OpenCloseForm()">Login</button>
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
+
+=======
+
+        <button class="open-button" onclick="OpenCloseForm()">Login</button>
+>>>>>>> f4d28693bdbc8e07ef57dcf40bb59224597e9d8c
 
     </header>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section onclick="FirstSection()" id="Card1">
+        <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
+        <p class="PCard">Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. </p>
+    </section>
+    <section onclick="SecondSection()" id="Card2">
+        <h2 class="TitleCard" id="TitleCard2">Title Goes Here2</h2>
+        <p class="PCard">Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. </p>
+    </section>
+    <section onclick="ThirdSection()" id="Card3">
+        <h2 class="TitleCard" id="TitleCard3">Title Goes Here3</h2>
+        <p class="PCard">Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. Lorem Ipsum is simply dummy 
+text of the printing and 
+typesetting industry. </p>
+    </section>
     <main>
 
-    <button class="open-button" onclick="OpenCloseForm()">Login</button>
+    
 
     <div class="form-popup" id="myLoginForm">
       <form action="../Includes/Login.inc.php" class="form-container" method="post">
@@ -42,21 +74,28 @@
     <div class="form-popup" id="mySignupForm">
         <form method="post" class="form-container" action="../Includes/Signup.inc.php">
             <h1>Sign Up</h1>
-            <input type="text" placeholder="Username" name="uid">
-            <input type="text" placeholder="Email" name="mail">
-            <input type="password" placeholder="Password" name="pwd">
-            <input type="password" placeholder="Re-type Password" name="pwd-verify">
+            <input type="text" placeholder="Username" name="uid" required>
+            <input type="text" placeholder="Email" name="mail" required>
+            <input type="password" placeholder="Password" name="pwd" required>
+            <input type="password" placeholder="Re-type Password" name="pwd-verify" required>
             <button type="submit" name="singup-submit" class="btn">Sign Up</button>
             <button type="button" class="btn" onclick="OpenFormType()">Login</button>
         </form>
     </div>
 
     </main>
+</div>
+    
 
     <script>
 
     var activeForm = 0;
     var activeFormType = 0;
+    var firstSectionBG = 0;
+    var secondSectionBG = 0;
+    var thirdSectionBG = 0;
+    
+
 
     function OpenCloseForm() {
 
@@ -85,13 +124,54 @@
         }
     }
 
-    //   function openForm() {
-    //     document.getElementById("myForm").style.display = "block";
-    //   }
+      //======\\
+     //Sections\\
+    //==========\\
 
-    //   function closeForm() {
-    //     document.getElementById("myForm").style.display = "none";
-    //   }
+    function FirstSection(){
+        if  (firstSectionBG == 0){
+            firstSectionBG = 1;
+
+            document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.5)";
+
+        }
+
+        else{
+            firstSectionBG = 0;
+
+            document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.18)";
+        }
+    }
+    
+    function SecondSection(){
+        if  (secondSectionBG == 0){
+            secondSectionBG = 1;
+
+            document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.5)";
+
+        }
+
+        else{
+            secondSectionBG = 0;
+
+            document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.18)";
+        }
+    }
+
+    function ThirdSection(){
+        if  (thirdSectionBG == 0){
+            thirdSectionBG = 1;
+
+            document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.5)";
+
+        }
+
+        else{
+            thirdSectionBG = 0;
+
+            document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.18)";
+        }
+    }
     </script>
 
 </body>
