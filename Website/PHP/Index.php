@@ -21,31 +21,35 @@
     </header>
     <section onclick="FirstSection()" id="Card1">
         <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
-        <p class="PCard">Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. </p>
+        <p class="PCard">
+        Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry. Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry.
+        </p>
     </section>
     <section onclick="SecondSection()" id="Card2">
         <h2 class="TitleCard" id="TitleCard2">Title Goes Here2</h2>
-        <p class="PCard">Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. </p>
+        <p class="PCard">
+        Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry. Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry.
+        </p>
     </section>
     <section onclick="ThirdSection()" id="Card3">
         <h2 class="TitleCard" id="TitleCard3">Title Goes Here3</h2>
-        <p class="PCard">Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. Lorem Ipsum is simply dummy 
-text of the printing and 
-typesetting industry. </p>
+        <p class="PCard">
+        Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry. Lorem Ipsum is simply dummy 
+        text of the printing and 
+        typesetting industry.
+        </p>
     </section>
     <main>
-
-    
 
     <div class="form-popup" id="myLoginForm">
       <form action="../Includes/Login.inc.php" class="form-container" method="post">
@@ -71,6 +75,11 @@ typesetting industry. </p>
         </form>
     </div>
 
+    <Div class="MainContent" id="Content1">
+        <h1>Lorem ipsum dolor</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
+    </Div>
+
     </main>
 </div>
     
@@ -82,6 +91,9 @@ typesetting industry. </p>
     var firstSectionBG = 0;
     var secondSectionBG = 0;
     var thirdSectionBG = 0;
+    var content1 = 0;
+    var content2 = 0;
+    var content3 = 0;
     
 
 
@@ -119,45 +131,51 @@ typesetting industry. </p>
     function FirstSection(){
         if  (firstSectionBG == 0){
             firstSectionBG = 1;
-
+            content1 = 1
             document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.5)";
+            document.getElementById("Content1").style.display = "block";
 
         }
 
         else{
             firstSectionBG = 0;
-
+            content1 = 0;
             document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.18)";
+            document.getElementById("Content1").style.display = "none";
         }
     }
     
     function SecondSection(){
         if  (secondSectionBG == 0){
             secondSectionBG = 1;
-
+            content2 = 1;
             document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.5)";
+            document.getElementById("Content2").style.display = "block";
 
         }
 
         else{
             secondSectionBG = 0;
-
+            content2 = 0;
             document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.18)";
+            document.getElementById("Content2").style.display = "none";
         }
     }
 
     function ThirdSection(){
         if  (thirdSectionBG == 0){
             thirdSectionBG = 1;
-
+            content3 = 1;
             document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.5)";
+            document.getElementById("Content3").style.display = "block";
 
         }
 
         else{
             thirdSectionBG = 0;
-
+            content3 = 0;
             document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.18)";
+            document.getElementById("Content3").style.display = "none";
         }
     }
     </script>

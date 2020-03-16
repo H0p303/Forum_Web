@@ -74,14 +74,6 @@ aside nav a:nth-of-type(3) {
   grid-area: User;
 }
 
-aside:hover {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 1;
-  grid-area: Sidebar;
-  background: #40514e;
-}
-
 header {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -92,13 +84,14 @@ header {
 }
 
 header .open-button {
-  background-color: #555;
+  background-color: #636363;
   color: white;
   cursor: pointer;
-  opacity: 0.8;
-  padding: 1em;
-  border-radius: 34%;
+  padding: 1em 1.5em;
+  border-radius: 34px;
+  border: none;
   position: fixed;
+  top: 6px;
   right: 2%;
   height: auto;
 }
@@ -223,5 +216,22 @@ main .form-container .cancel {
 main .form-container .btn:hover,
 main .open-button:hover {
   opacity: 1;
+}
+
+main .MainContent {
+  display: none;
+}
+
+main .MainContent h1 {
+  width: auto;
+  margin-left: 5rem;
+  font-size: 2.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main .MainContent p {
+  width: 80%;
+  text-align: center;
+  margin: auto;
 }
 /*# sourceMappingURL=Style.css.map */
