@@ -3,9 +3,6 @@ var activeFormType = 0;
 var firstSectionBG = 0;
 var secondSectionBG = 0;
 var thirdSectionBG = 0;
-var content1 = 0;
-var content2 = 0;
-var content3 = 0;
     
 
 
@@ -36,22 +33,20 @@ function OpenFormType(){
     }
 }
 
-    //======\\
-    //Sections\\
+  //======\\
+ //Sections\\
 //==========\\
 
 
 function FirstSection(){
     if  (firstSectionBG == 0){
         firstSectionBG = 1;
-        content1 = 1
         document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.5)";
         document.getElementById("Content1").style.display = "block";
     }
 
     else{
         firstSectionBG = 0;
-        content1 = 0;
         document.getElementById("Card1").style.backgroundColor = "rgba(0,0,0,0.18)";
         document.getElementById("Content1").style.display = "none";
     }
@@ -60,7 +55,6 @@ function FirstSection(){
 function SecondSection(){
     if  (secondSectionBG == 0){
         secondSectionBG = 1;
-        content2 = 1;
         document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.5)";
         document.getElementById("Content2").style.display = "block";
 
@@ -68,7 +62,6 @@ function SecondSection(){
 
     else{
         secondSectionBG = 0;
-        content2 = 0;
         document.getElementById("Card2").style.backgroundColor = "rgba(0,0,0,0.18)";
         document.getElementById("Content2").style.display = "none";
     }
@@ -77,7 +70,6 @@ function SecondSection(){
 function ThirdSection(){
     if  (thirdSectionBG == 0){
         thirdSectionBG = 1;
-        content3 = 1;
         document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.5)";
         document.getElementById("Content3").style.display = "block";
 
@@ -85,7 +77,6 @@ function ThirdSection(){
 
     else{
         thirdSectionBG = 0;
-        content3 = 0;
         document.getElementById("Card3").style.backgroundColor = "rgba(0,0,0,0.18)";
         document.getElementById("Content3").style.display = "none";
     }
