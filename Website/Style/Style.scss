@@ -87,11 +87,12 @@ section:nth-of-type(1) {
     grid-area: Sect1;
     background: rgba(0, 0, 0, 0.18);
     border-radius: 34px 34px 34px 34px;
-    
-    .TitleCard{
+
+    .TitleCard {
         text-align: center;
     }
-    .PCard{
+
+    .PCard {
         text-align: center;
         padding: 1em 2em 0 2em;
     }
@@ -102,10 +103,11 @@ section:nth-of-type(2) {
     background: rgba(0, 0, 0, 0.18);
     border-radius: 34px 34px 34px 34px;
 
-    .TitleCard{
+    .TitleCard {
         text-align: center;
     }
-    .PCard{
+
+    .PCard {
         text-align: center;
         padding: 1em 2em 0 2em;
     }
@@ -116,10 +118,11 @@ section:nth-of-type(3) {
     background: rgba(0, 0, 0, 0.18);
     border-radius: 34px 34px 0 0;
 
-    .TitleCard{
+    .TitleCard {
         text-align: center;
     }
-    .PCard{
+
+    .PCard {
         text-align: center;
         padding: 1em 2em 0 2em;
     }
@@ -129,6 +132,7 @@ main {
     grid-area: main;
     background: rgba(0, 0, 0, 0.18);
     border-radius: 34px 0 0 0;
+
     .open-button {
         background-color: #555;
         color: white;
@@ -141,6 +145,7 @@ main {
         width: 100px;
         height: 32px;
     }
+
     .form-popup {
         display: none;
         position: fixed;
@@ -189,15 +194,17 @@ main {
         opacity: 1;
     }
 
-    .MainContent{
+    .MainContent {
         display: none;
-        h1{
+
+        h1 {
             width: auto;
             margin-left: 5rem;
             font-size: 2.5em;
             font-family: Arial, Helvetica, sans-serif;
         }
-        p{
+
+        p {
             width: 80%;
             text-align: center;
             margin: auto;
