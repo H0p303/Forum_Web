@@ -11,6 +11,10 @@ function OpenCloseForm() {
   } else {
     document.getElementById("myLoginForm").style.display = "none";
     document.getElementById("mySignupForm").style.display = "none";
+    document.getElementById("UserInput").value = "";
+    document.getElementById("EmailInput").value = "";
+    document.getElementById("PassInput").value = "";
+    document.getElementById("VerPassInput").value = "";
     activeFormType = 0;
     activeForm = 0;
   }
@@ -24,6 +28,10 @@ function OpenFormType() {
   } else {
     document.getElementById("mySignupForm").style.display = "none";
     document.getElementById("myLoginForm").style.display = "block";
+    document.getElementById("UserInput").value = "";
+    document.getElementById("EmailInput").value = "";
+    document.getElementById("PassInput").value = "";
+    document.getElementById("VerPassInput").value = "";
     activeFormType = 0;
   }
 }

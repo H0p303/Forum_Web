@@ -22,7 +22,18 @@
         </nav>
     </aside>
     <header>
-        <button class="open-button" onclick="OpenCloseForm()">Login</button>
+        <?php
+        
+        if(isset($_SESSION['userID'])){
+            echo'<form action="../Includes/Logout.inc.php" method="post">
+                <button class="open-button" type="submit">Logout</button>
+            </form>';
+        }
+        else{
+            echo'<button class="open-button" onclick="OpenCloseForm()">Login</button>';
+        }
+        
+        ?>
     </header>
     <section onclick="FirstSection()" id="Card1">
         <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
@@ -57,45 +68,7 @@
     <main>
 
 
-
-<?php
-
-    // if(isset($_SESSION['userID'])){
-    //     echo'<div class="form-popup" id="myLoginForm">
-    //     <form action="../Includes/Login.inc.php" class="form-container" method="post">
-    //       <h1>Login</h1>
-    //       <label for="email"><b>Email</b></label>
-    //       <input type="text" placeholder="Enter Email" name="mailuid" required/>
-    //       <label for="psw"><b>Password</b></label>
-    //       <input type="password" placeholder="Enter Password" name="pwd" required/>
-    //       <button type="submit" class="btn" name="Login-Submit">Login</button>
-    //       <button type="button" class="btn" onclick="OpenFormType()">Sign Up</button>
-    //     </form>
-    //   </div>
-  
-    //   <div class="form-popup" id="mySignupForm">
-    //       <form method="post" class="form-container" action="../Includes/Signup.inc.php">
-    //           <h1>Sign Up</h1>
-    //           <input type="text" placeholder="Username" name="uid" required>
-    //           <input type="text" placeholder="Email" name="mail" required>
-    //           <input type="password" placeholder="Password" name="pwd" required>
-    //           <input type="password" placeholder="Re-type Password" name="pwd-verify" required>
-    //           <button type="submit" name="singup-submit" class="btn">Sign Up</button>
-    //           <button type="button" class="btn" onclick="OpenFormType()">Login</button>
-    //       </form>
-    //   </div>';
-    // }
-    // else{
-    //     echo'<div class="form-popup" id="myLougoutForm">
-    //     <form action="../Includes/Logout.inc.php" method="post">
-    //         <button type="submit">Logout</button>
-    //     </form>
-    // </div>';
-    // }
-
-?>
-
-    <!-- <div class="form-popup" id="myLoginForm">
+    <div class="form-popup" id="myLoginForm">
       <form action="../Includes/Login.inc.php" class="form-container" method="post">
         <h1>Login</h1>
         <label for="email"><b>Email</b></label>
@@ -110,18 +83,12 @@
     <div class="form-popup" id="mySignupForm">
         <form method="post" class="form-container" action="../Includes/Signup.inc.php">
             <h1>Sign Up</h1>
-            <input type="text" placeholder="Username" name="uid" required>
-            <input type="text" placeholder="Email" name="mail" required>
-            <input type="password" placeholder="Password" name="pwd" required>
-            <input type="password" placeholder="Re-type Password" name="pwd-verify" required>
+            <input id="UserInput" type="text" placeholder="Username" name="uid" required>
+            <input id="EmailInput" type="text" placeholder="Email" name="mail" required>
+            <input id="PassInput" type="password" placeholder="Password" name="pwd" required>
+            <input id="VerPassInput" type="password" placeholder="Re-type Password" name="pwd-verify" required>
             <button type="submit" name="singup-submit" class="btn">Sign Up</button>
             <button type="button" class="btn" onclick="OpenFormType()">Login</button>
-        </form>
-    </div> -->
-
-    <div class="form-popup" id="myLougoutForm">
-        <form action="../Includes/Logout.inc.php" method="post">
-            <button type="submit">Logout</button>
         </form>
     </div>
 
