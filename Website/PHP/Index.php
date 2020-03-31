@@ -16,7 +16,7 @@
 <div class="Main-Container">
     <aside>
         <nav>
-            <a href="#"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
+            <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
             <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
             <a href="#"><img src="../Resources/Images/User_64x64.png" alt=""></a>
         </nav>
