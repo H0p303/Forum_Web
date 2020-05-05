@@ -17,7 +17,7 @@ if(isset($_POST['Login-Submit'])){
     else{
         //selects all from users and uses a prepared statment
         //in order to help prevent sql injection attacks
-        $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
+        $sql = "SELECT * FROM users WHERE UserName=? OR UserEmail=?;";
         $stmt = mysqli_stmt_init($conn);
         //if not safe redirect
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -32,7 +32,7 @@ if(isset($_POST['Login-Submit'])){
             
             //unhashes the PWD stored in DB and compares it to the user entered PWD
             if($row = mysqli_fetch_assoc($result)){
-                $pwdCheck = password_verify($Pwd, $row['pwdUsers']);
+                $pwdCheck = password_verify($Pwd, $row['UserPass']);
                 //if no match redirect user
                 if($pwdCheck == false){
                     header("Location: ../PHP/Index.php?error=wrongpwd1");
@@ -41,8 +41,9 @@ if(isset($_POST['Login-Submit'])){
                 //if match login user
                 elseif($pwdCheck == true){
                     session_start();
-                    $_SESSION['userID'] = $row['idUsers'];
-                    $_SESSION['userUID'] = $row['uidUsers'];
+                    $_SESSION['userID'] = $row['UserID'];
+                    $_SESSION['userUID'] = $row['UserName'];
+                    $_SESSION['userRole'] = $row['UserRole'];
 
                     header("Location: ../PHP/Index.php?Success");
                     exit();

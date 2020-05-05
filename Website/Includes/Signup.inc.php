@@ -13,7 +13,7 @@ if(isset($_POST['signup-submit'])){
     //if true sends user back to signup page with info in url
     //terminates script
     if(empty($username) || empty($Email) || empty($Pwd) || empty($Pwd_Verify)){
-        header("Location: ../PHP/Signup.php?error=emptyfield&uid=".$username. "&mail=".$Email);
+        header("Location: ../PHP/Index.php?error=emptyfield&uid=".$username. "&mail=".$Email);
         //Terminates the script after this point if one field is empty.
         //Otherwise it will go on
         exit();
@@ -21,38 +21,38 @@ if(isset($_POST['signup-submit'])){
     //Checks if email and username is valid
     //if not terminates script and redirects back to signup page
     elseif(!filter_var($Email, FILTER_VALIDATE_EMAIL) && !preg_match('/^[a-zA-Z0-9]*$/', $username)){
-        header("Location: ../PHP/Signup.php?error=invalidmailuid");
+        header("Location: ../PHP/Index.php?error=invalidmailuid");
         exit();
     }
     //checks if email is valid
     //if not terminates script and redirects user to signup page
     elseif(!filter_var($Email, FILTER_VALIDATE_EMAIL)){
-        header("Location: ../PHP/Signup.php?error=invalidmail&uid=".$username);
+        header("Location: ../PHP/Index.php?error=invalidmail&uid=".$username);
         exit();
     }
     //checks if username is valid
     //if not terminates script and redirects user to signup page
     elseif(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
-        header("Location: ../PHP/Signup.php?error=invalidusername&mail=".$Email);
+        header("Location: ../PHP/Index.php?error=invalidusername&mail=".$Email);
         exit();
     }
     //checks if passwords match
     //if not terminates script and redirects user to signup page
     elseif($Pwd !== $Pwd_Verify){
-        header("Location: ../PHP/Signup.php?error=passwordcheck&uid=".$username. "&mail=".$Email);
+        header("Location: ../PHP/Index.php?error=passwordcheck&uid=".$username. "&mail=".$Email);
         exit();
     }
     //checks if username is already taken
     else{
 
-        $sql = "SELECT uidUsers FROM users WHERE uidUsers=?;";
+        $sql = "SELECT UserName FROM users WHERE UserName=?;";
         //takes value entered into the form and checks if it is safe to use
         //by the mysqli_stms_prepare later
         //helps prevent sqli injection attacks
         $stmt = mysqli_stmt_init($conn);
         //if not safe redirects user
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../PHP/Signup.php?error=sqlerror");
+            header("Location: ../PHP/Index.php?error=sqlerror");
             exit();
         }
         //Defines what type of value is inputed and adds the user input
@@ -73,18 +73,18 @@ if(isset($_POST['signup-submit'])){
                 //if result is larger than 0
                 //username is already taken
                 //user redirected
-                header("Location: ../PHP/Signup.php?error=usernametaken&mail=".$Email );
+                header("Location: ../PHP/Index.php?error=usernametaken&mail=".$Email );
                 exit();
             }
             else{
                 //inserts placeholders into tables
                 //No values given by user inputed at this point
-                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
+                $sql = "INSERT INTO users (UserName, UserEmail, UserPass) VALUES (?,?,?);";
                 //checks if values are safe
                 $stmt = mysqli_stmt_init($conn);
                 //if not redirects user
                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                    header("Location: ../PHP/Signup.php?error=sqlerror");
+                    header("Location: ../PHP/Index.php?error=sqlerror");
                     exit();
                 }
                 //else if safe to use
@@ -109,6 +109,6 @@ if(isset($_POST['signup-submit'])){
 //If submit btn not pressed 
 //redirect user
 else{
-    header("Location: ../PHP/Signup.php");
+    header("Location: ../PHP/Index.php?failed");
     exit();
 }

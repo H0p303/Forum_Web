@@ -19,11 +19,11 @@ html a {
   margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10% 30% auto;
-      grid-template-columns: 10% 30% auto;
+  -ms-grid-columns: 10% 25% auto;
+      grid-template-columns: 10% 25% auto;
   -ms-grid-rows: auto 30% 30% 30%;
       grid-template-rows: auto 30% 30% 30%;
-  grid-gap: 0.3em;
+  grid-gap: 1em;
       grid-template-areas: "Sidebar header header header" "Sidebar Sect1 main main" "Sidebar Sect2 main main" "Sidebar Sect3 main main";
 }
 
@@ -135,7 +135,7 @@ section:nth-of-type(3) {
   -ms-grid-column: 2;
   grid-area: Sect3;
   background: rgba(0, 0, 0, 0.18);
-  border-radius: 34px 34px 0 0;
+  border-radius: 34px 34px 34px 34px;
 }
 
 section:nth-of-type(3) .TitleCard {

@@ -14,13 +14,40 @@
 <body>
     
 <div class="Main-Container">
-    <aside>
-        <nav>
-            <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
-            <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
-            <a href="#"><img src="../Resources/Images/User_64x64.png" alt=""></a>
-        </nav>
-    </aside>
+
+    <?php
+    
+        if(isset($_SESSION['userID'])){
+            if($_SESSION['userRole'] == 'Admin'){
+                echo'
+                <aside>
+                    <nav>
+                        <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
+                        <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
+                        <a href="Admin.php"><img src="../Resources/Images/User_64x64.png" alt=""></a>
+                    </nav>
+                </aside>';
+            }
+            else if($_SESSION['userRole'] == 'User'){
+                echo'<aside>
+                <nav>
+                    <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
+                    <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
+                </nav>
+            </aside>';
+            }
+        }
+        else{
+            echo'<aside>
+            <nav>
+                <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
+                <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
+            </nav>
+        </aside>';
+        }
+
+    ?>
+
     <header>
         <?php
         
@@ -35,36 +62,57 @@
         
         ?>
     </header>
-    <section onclick="FirstSection()" id="Card1">
-        <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
-        <p class="PCard">
-        Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry. Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry.
-        </p>
-    </section>
-    <section onclick="SecondSection()" id="Card2">
-        <h2 class="TitleCard" id="TitleCard2">Title Goes Here2</h2>
-        <p class="PCard">
-        Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry. Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry.
-        </p>
-    </section>
-    <section onclick="ThirdSection()" id="Card3">
-        <h2 class="TitleCard" id="TitleCard3">Title Goes Here3</h2>
-        <p class="PCard">
-        Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry. Lorem Ipsum is simply dummy 
-        text of the printing and 
-        typesetting industry.
-        </p>
-    </section>
+    <?php
+        if(isset($_SESSION['userID'])){
+            echo'<section onclick="FirstSection()" id="Card1">
+            <h2 class="TitleCard" id="TitleCard1">Title Goes Here1</h2>
+            <p class="PCard">
+            Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry. Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry.
+            </p>
+        </section>
+        <section onclick="SecondSection()" id="Card2">
+            <h2 class="TitleCard" id="TitleCard2">Title Goes Here2</h2>
+            <p class="PCard">
+            Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry. Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry.
+            </p>
+        </section>
+        <section onclick="ThirdSection()" id="Card3">
+            <h2 class="TitleCard" id="TitleCard3">Title Goes Here3</h2>
+            <p class="PCard">
+            Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry. Lorem Ipsum is simply dummy 
+            text of the printing and 
+            typesetting industry.
+            </p>
+        </section>';
+        }
+        else{
+            echo'<section id="Card1">
+            <h2 class="TitleCard" id="TitleCard1"></h2>
+            <p class="PCard">
+            </p>
+        </section>
+        <section id="Card2">
+            <h2 class="TitleCard" id="TitleCard2"></h2>
+            <p class="PCard">
+            </p>
+        </section>
+        <section id="Card3">
+            <h2 class="TitleCard" id="TitleCard3"></h2>
+            <p class="PCard">
+            </p>
+        </section>';
+        }
+    ?>
     <main>
 
 
@@ -87,23 +135,41 @@
             <input id="EmailInput" type="text" placeholder="Email" name="mail" required>
             <input id="PassInput" type="password" placeholder="Password" name="pwd" required>
             <input id="VerPassInput" type="password" placeholder="Re-type Password" name="pwd-verify" required>
-            <button type="submit" name="singup-submit" class="btn">Sign Up</button>
+            <button type="submit" name="signup-submit" class="btn">Sign Up</button>
             <button type="button" class="btn" onclick="OpenFormType()">Login</button>
         </form>
     </div>
 
-    <Div class="MainContent" id="Content1">
-        <h1>Lorem 1 dolor</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
-    </Div>
-    <Div class="MainContent" id="Content2">
-        <h1>Lorem 2 dolor</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
-    </Div>
-    <Div class="MainContent" id="Content3">
-        <h1>Lorem 3 dolor</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
-    </Div>
+        <?php
+            if(isset($_SESSION['userID'])){
+                echo'<Div class="MainContent" id="Content1">
+                <h1>Lorem 1 dolor</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
+            </Div>
+            <Div class="MainContent" id="Content2">
+                <h1>Lorem 2 dolor</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
+            </Div>
+            <Div class="MainContent" id="Content3">
+                <h1>Lorem 3 dolor</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae natus facilis quasi sunt nemo blanditiis atque maxime cumque dolorem! Et, aspernatur dignissimos sit optio voluptate neque quo alias ducimus unde, facilis iusto! Non dolor id eum velit ratione quasi fugiat dolorum necessitatibus quis. Nam sit doloremque odio repellat rerum quia illo molestias praesentium consequatur eum, suscipit vel ipsam voluptate deleniti, reiciendis repudiandae autem iusto earum consectetur. Perspiciatis autem aspernatur tenetur vel iusto numquam soluta, nihil non ratione, possimus fuga placeat dolores, exercitationem quod eum officiis nesciunt explicabo sequi minima dignissimos necessitatibus dolore? Maxime repudiandae quidem delectus incidunt numquam, officia error, veritatis amet dolore, eveniet cumque consequuntur! Adipisci temporibus impedit fugiat quidem ad eveniet, tenetur soluta possimus fuga deserunt error eos odit doloribus. Blanditiis minus vero exercitationem perspiciatis mollitia minima voluptate beatae, amet earum! Odio amet asperiores nostrum inventore itaque impedit maiores ipsa, deserunt, aut quas, libero eligendi quae in? Est alias voluptate ex nesciunt quae numquam commodi dignissimos voluptates repudiandae recusandae eum perspiciatis exercitationem quis doloremque aliquam aspernatur, expedita architecto hic accusamus? Aperiam, tenetur nam harum asperiores fuga a. Sed quas dolores accusantium soluta hic quaerat reiciendis officia vel nulla consequatur itaque fuga nobis repellendus asperiores incidunt sint voluptates, minus, iste ipsam? Mollitia ad, dolorum impedit molestias sunt tempore nostrum rerum facere, deleniti aliquid illum qui ab doloribus labore laborum ullam obcaecati earum placeat pariatur, iusto aperiam. Tempore repudiandae ratione praesentium ut at libero est deleniti explicabo amet. Pariatur vitae quibusdam vero nam minima ea aliquam libero totam id.</p>
+            </Div>';
+            }
+            else{
+                echo'<Div class="MainContent" id="Content1">
+                <h1></h1>
+                <p></p>
+            </Div>
+            <Div class="MainContent" id="Content2">
+                <h1></h1>
+                <p></p>
+            </Div>
+            <Div class="MainContent" id="Content3">
+                <h1></h1>
+                <p></p>
+            </Div>';
+            }
+        ?>
 
     </main>
 </div>
