@@ -8,6 +8,7 @@ if(isset($_POST['signup-submit'])){
     $Email = $_POST['mail'];
     $Pwd = $_POST['pwd'];
     $Pwd_Verify = $_POST['pwd-verify'];
+    $UserRole = "User";
 
     //Checks if one or more field is empty
     //if true sends user back to signup page with info in url
@@ -79,7 +80,7 @@ if(isset($_POST['signup-submit'])){
             else{
                 //inserts placeholders into tables
                 //No values given by user inputed at this point
-                $sql = "INSERT INTO users (UserName, UserEmail, UserPass) VALUES (?,?,?);";
+                $sql = "INSERT INTO users (UserName, UserEmail, UserPass, UserRole) VALUES (?,?,?,?);";
                 //checks if values are safe
                 $stmt = mysqli_stmt_init($conn);
                 //if not redirects user
@@ -94,7 +95,7 @@ if(isset($_POST['signup-submit'])){
                     //Hashed password is the entered into the DB
                     //instead of the plaintext veriant
                     //inputs values as strings into the table specified above
-                    mysqli_stmt_bind_param($stmt, "sss", $username, $Email, $hashedPwd);
+                    mysqli_stmt_bind_param($stmt, "ssss", $username, $Email, $hashedPwd, $UserRole);
                     mysqli_stmt_execute($stmt);
                     header("Location: ../PHP/Index.php?signup=success");
                     exit();

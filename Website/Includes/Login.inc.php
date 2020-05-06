@@ -41,7 +41,7 @@ if(isset($_POST['Login-Submit'])){
                 //if match login user
                 elseif($pwdCheck == true){
                     session_start();
-                    $_SESSION['userID'] = $row['UserID'];
+                    $_SESSION['userID'] = $row['userID'];
                     $_SESSION['userUID'] = $row['UserName'];
                     $_SESSION['userRole'] = $row['UserRole'];
 
