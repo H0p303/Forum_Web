@@ -25,7 +25,7 @@
         echo "<table><tr><th>ID</th><th>UserName</th><th>UserEmail</th><th>Role</th></tr>";
         while($row = $result -> fetch_assoc()){
             $Num++;
-            echo "<form method='get' action='../Includes/EditUser.inc.php'><tr><td><input type='text' name='Admin_uID$Num' disabled value='" . $row["UserID"]."'>".  "</td><td name='Admin_UN'>" . $row["UserName"]. "</td><td name='Admin_UserEmail'>" . $row["UserEmail"] . "</td><td>" . "<select name='UserRole$Num'>";
+            echo "<tr><td>" . $row["UserID"]. "</td><td>" . $row["UserName"]. "</td><td>" . $row["UserEmail"] . "</td><td>" . "<form method='post' action='../Includes/EditUser.inc.php'><select name='UserRole$Num'>";
             if($row["UserRole"] == "Admin"){
                 echo "<option value='Admin' id='$Num' selected>Admin</option><option id='$Num' value='User'>User</option></select><td><button type='submit' name='submit'>Save</button></form></td>";
             }
