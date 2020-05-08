@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Style/Style.css">
+    <link rel="stylesheet" href="../Style/MainStyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -23,8 +23,8 @@
                 <aside>
                     <nav>
                         <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
-                        <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
-                        <a href="Admin.php"><img src="../Resources/Images/User_64x64.png" alt=""></a>
+                        <a href="UserEdit.php"><img src="../Resources/Images/User_64x64.png" alt=""></a>
+                        <a href="Admin.php"><img src="../Resources/Images/Cog_64x64.png" alt=""></a>
                     </nav>
                 </aside>';
             }
@@ -32,7 +32,7 @@
                 echo'<aside>
                 <nav>
                     <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
-                    <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
+                    <a href="#"><img src="../Resources/Images/User_64x64.png" alt=""></a>
                 </nav>
             </aside>';
             }

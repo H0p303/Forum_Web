@@ -1,6 +1,10 @@
 <?php
     session_start();
     require '../Includes/dbh.inc.php';
+    if ($_SESSION['userRole'] !== 'Admin') {
+        header("Location: ./index.php");
+        exit();
+    }
 
 ?>
 
@@ -11,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Style/Style2.css">
+    <link rel="stylesheet" href="../Style/AdminStyle.css">
 </head>
 <body>
     
@@ -20,25 +24,41 @@
 
     $sql = "SELECT UserID, UserName, UserEmail, UserRole FROM users";
     $result = $conn -> query($sql);
-    $Num = 0;
     if ($result -> num_rows > 0){
-        echo "<table><tr><th>ID</th><th>UserName</th><th>UserEmail</th><th>Role</th></tr>";
         while($row = $result -> fetch_assoc()){
-            $Num++;
-            echo "<form method='get' action='../Includes/EditUser.inc.php'><tr><td><input type='text' name='Admin_uID$Num' disabled value='" . $row["UserID"]."'>".  "</td><td name='Admin_UN'>" . $row["UserName"]. "</td><td name='Admin_UserEmail'>" . $row["UserEmail"] . "</td><td>" . "<select name='UserRole$Num'>";
-            if($row["UserRole"] == "Admin"){
-                echo "<option value='Admin' id='$Num' selected>Admin</option><option id='$Num' value='User'>User</option></select><td><button type='submit' name='submit'>Save</button></form></td>";
-            }
-            else if($row["UserRole"] == "User"){
-                echo "<option value='Admin' id='$Num'>Admin</option><option value='User' id='$Num' selected>User</option></select><td><button type='submit' name='submit'>Save</button></form></td>";
-            }
+            echo "<form method='post' action='../Includes/EditUser.inc.php'>";
+
+                    echo '<input type="text" name="Admin_uID" required value="' . $row["UserID"] . '">';
+                    echo '<input type="text" name="Admin_uName" required value="' . $row["UserName"] . '">';
+                    echo '<input type="text" name="Admin_uMail" required value="' . $row["UserEmail"] . '">';
+                    echo '<select name="Admin_uRole">';
+                    switch ($row['UserRole']) {
+                        case 'Admin':
+                            echo'
+                            <option value="User">[User]</option>
+                            <option value="Admin" selected="selected">[Admin]</option>
+                            ';
+                            break;
+                        case 'User':
+                            echo'
+                            <option value="User" selected>[User]</option>
+                            <option value="Admin">[Admin]</option>
+                            ';
+                            break;
+                        
+                        default:
+                            echo'
+                            <option value="User" selected>[User]</option>
+                            <option value="Admin">[Admin]</option>
+                            ';
+                            break;
+                    }
+                    
+                        echo "</select>" . "<button type='submit' name='submit'>Save</button>" . "</form>";
+                    }
+
         }
-        
-        echo "</tr></table>";
-    }
-    else{
-        "0 results";
-    }
+
 ?>
 
 <br>
