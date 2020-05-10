@@ -1,8 +1,25 @@
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }
 
-a {
+#BackBtn {
+  left: 40px;
+  position: fixed;
+  bottom: 40px;
+}
+
+#BackBtn a {
   text-decoration: none;
+  background-color: wheat;
+  border: red solid 2px;
+  border-radius: 1em;
+  padding: 10px;
+}
+
+#BackBtn a:hover {
+  background-color: rgba(255, 0, 0, 0.185);
+  border: rgba(255, 0, 0, 0.185) solid 2px;
 }
 /*# sourceMappingURL=AdminStyle.css.map */

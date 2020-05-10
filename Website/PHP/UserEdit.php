@@ -12,7 +12,16 @@
 </head>
 <body>
     
-    <div class="Main-Contaier"></div>
+    <div class="Main-Contaier">
+    
+        <div class="Aside">
+           test
+        </div>
+        <div class="EditArea">
+            test
+        </div>
+    
+    </div>
 
 </body>
 </html>

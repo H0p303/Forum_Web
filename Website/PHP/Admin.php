@@ -28,9 +28,9 @@
         while($row = $result -> fetch_assoc()){
             echo "<form method='post' action='../Includes/EditUser.inc.php'>";
 
-                    echo '<input type="text" name="Admin_uID" required value="' . $row["UserID"] . '">';
-                    echo '<input type="text" name="Admin_uName" required value="' . $row["UserName"] . '">';
-                    echo '<input type="text" name="Admin_uMail" required value="' . $row["UserEmail"] . '">';
+                    echo '<input type="text" name="Admin_uID" readonly required value="' . $row["UserID"] . '">';
+                    echo '<input type="text" name="Admin_uName" readonly required value="' . $row["UserName"] . '">';
+                    echo '<input type="text" name="Admin_uMail" readonly required value="' . $row["UserEmail"] . '">';
                     echo '<select name="Admin_uRole">';
                     switch ($row['UserRole']) {
                         case 'Admin':
@@ -53,13 +53,17 @@
                             ';
                             break;
                     }
-                    
                         echo "</select>" . "<button type='submit' name='submit'>Save</button>" . "</form>";
                     }
 
         }
 
 ?>
+<br>
+<br>
+<div id="BackBtn">
+<a href="../PHP/Index.php">Back</a>
+</div>
 
 <br>
 <br>

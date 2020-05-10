@@ -16,7 +16,6 @@
 <div class="Main-Container">
 
     <?php
-    
         if(isset($_SESSION['userID'])){
             if($_SESSION['userRole'] == 'Admin'){
                 echo'
@@ -41,11 +40,10 @@
             echo'<aside>
             <nav>
                 <a href="MainPage.php"><img src="../Resources/Images/Home_64x64.png" alt=""></a>
-                <a href="#"><img src="../Resources/Images/Bell_64x64.png" alt=""></a>
+                <a href="#"><img src="../Resources/Images/User_64x64.png" alt=""></a>
             </nav>
         </aside>';
         }
-
     ?>
 
     <header>

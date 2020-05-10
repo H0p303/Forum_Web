@@ -1,8 +1,25 @@
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
 }
 
+#BackBtn {
 
-a{
-    text-decoration: none;
+    left: 40px;
+    position: fixed;
+    bottom: 40px;
+
+    a {
+        text-decoration: none;
+        background-color: wheat;
+        border: rgb(255, 0, 0) solid 2px;
+        border-radius: 1em;
+        padding: 10px;
+    }
+
+    a:hover {
+        background-color: rgba(255, 0, 0, 0.185);
+        border: rgba(255, 0, 0, 0.185) solid 2px;
+    }
 }
