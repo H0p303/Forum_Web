@@ -73,13 +73,11 @@
                 $Js_Section++;
                 $SneakPeak = substr($row['PostBody'], 0, 300);
                 if(isset($_SESSION['userID'])){
-                    echo '<section id="Card">';
-                    echo '<a href="#">';
+                    echo '<section onclick="Section' . $Js_Section . '()" id="Card' . $CardNum . '">';
                     echo '<h2 class="TitleCard" id="TitleCard' . $TitleCardNum .'">' . $row['PostTitle'];
                     echo '</h2>';
                     echo "<p class='PCard'>$SneakPeak";
                     echo '</p>';
-                    echo '</a>';
                     echo '</section>';
                 }
                 else{

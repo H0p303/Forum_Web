@@ -7,7 +7,7 @@
         $uID = $_POST['uID'];
         $uName = $_POST['uName'];
         $uMail = $_POST['uMail'];
-        $ActiveUserName = $_SESSION['ActiveUserNaem'];
+        $ActiveUserName = $_SESSION['ActiveUserName'];
 
 
         //Checks if one or more field is empty
@@ -34,7 +34,7 @@
             exit();
         }
         else{
-            if($uName = $ActiveUserName){
+            if($uName != $ActiveUserName){
                 $sql = "SELECT UserName FROM users WHERE UserName=?;";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -82,7 +82,6 @@
                 }
             }
         }
-            
     }
     else{
         header("Location: ../PHP/UserEdit.php?failed");
