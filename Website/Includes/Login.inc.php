@@ -42,7 +42,7 @@ if(isset($_POST['Login-Submit'])){
                 elseif($pwdCheck == true){
                     session_start();
                     $_SESSION['userID'] = $row['UserID'];
-                    $_SESSION['userUID'] = $row['UserName'];
+                    $_SESSION['ActiveUserName'] = $row['UserName'];
                     $_SESSION['userRole'] = $row['UserRole'];
 
                     header("Location: ../PHP/Index.php?Success");

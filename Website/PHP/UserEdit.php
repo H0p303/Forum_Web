@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require '../Includes/dbh.inc.php'
 ?>
 
 <!DOCTYPE html>
@@ -12,16 +13,25 @@
 </head>
 <body>
     
-    <div class="Main-Contaier">
-    
-        <div class="Aside">
-           test
-        </div>
-        <div class="EditArea">
-            test
-        </div>
-    
-    </div>
+    <?php
+        $uID = $_SESSION["userID"];
+        $sql = "SELECT UserID, UserName, UserEmail, UserRole FROM users WHERE UserID=$uID";
+        $result = $conn -> query($sql);
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()){
+                echo '<form action="../Includes/EditUserInfo.inc.php" method="post">';
+                    echo '<input type="text" name="uID" readonly required value="' . $row["UserID"] . '">';
+                    echo '<input type="text" name="uName" required value="' . $row["UserName"] . '">';
+                    echo '<input type="text" name="uMail" required value="' . $row["UserEmail"] . '">';
+                    echo '<input type="text" name="uRole" readonly value="' . $row["UserRole"] . '">';
+                    echo '<button type="submit" name="SaveBtn">Save</button>';
+                echo '</form>';
+            }
+          } else {
+            echo "0 results";
+          }
+    ?>
 
 </body>
 </html>

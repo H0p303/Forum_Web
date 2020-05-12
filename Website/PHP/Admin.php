@@ -26,7 +26,7 @@
     $result = $conn -> query($sql);
     if ($result -> num_rows > 0){
         while($row = $result -> fetch_assoc()){
-            echo "<form method='post' action='../Includes/EditUser.inc.php'>";
+            echo "<form method='post' action='../Includes/EditUserRole.inc.php'>";
 
                     echo '<input type="text" name="Admin_uID" readonly required value="' . $row["UserID"] . '">';
                     echo '<input type="text" name="Admin_uName" readonly required value="' . $row["UserName"] . '">';
